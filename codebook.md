@@ -89,8 +89,19 @@ The modfied data set is stored in a data frame variable 'namedData'.
 
 This stage involves the following steps:
 
-
+1. Load the dplyr package
+2. Remove the following non-measurement data fields: ActivityId, OriginalDataset, RowIdInDataset
+3. Using the dplyr commands 'group_by' and 'summarise_each', the data set is grouped by the activity and subject. This value is stored within the summarisedTidyData data frame variable.
+4. The data frame is exported to the file 'tidyDataSet.txt' in the current working directory. Note that the row names are not written to the export file.
 
 ### Data Information
 
-### Measurements
+This section provides details regarding the data fields within the result objects of the script run_analysis.R. These are:
+
+* The data frame variable 'namedData'. This contains all 10299 data records from the test and train data sets. Each record represents a set of measurements for a particular subject performing a particular activity. 
+* The export file 'tidyDataSet.txt'. This file contains a summary of the data contained within namedData. The average value for each measurement variable is calculated for each subject and activity combination.
+
+#### Data Fields
+
+
+
