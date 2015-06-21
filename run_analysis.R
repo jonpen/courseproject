@@ -100,6 +100,9 @@ names(namedData) <- gsub("-std()"," StdDev", names(namedData), fixed=TRUE)
 # 5. From the data set in step 4, creates a second, independent tidy data set with the 
 #    average of each variable for each activity and each subject.
 
+# Load the dplyr package
+library(dplyr)
+
 # Rearrange data columns (i.e. removing Activity ID, Dataset origin info)
 tidyData <- select(namedData, 1, 71, 3:68)
 
