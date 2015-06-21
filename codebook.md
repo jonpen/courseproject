@@ -56,7 +56,40 @@ The equivalent files are also loaded for the training data set (just replace tes
 * Two additional data fields are then added to each bound data frame. These specify the dataset and the record number and are useful in identifying the original data source at later process stages (if required)
 * Finally, the test and train datasets are then merged together using rbind i.e. mergedData <- rbind(bindedTrain, bindedTest)
 
-#### Next stage
+#### Data Field Extraction
+
+This stage uses the gdata library function matchcols to identify the columns that we want to extract from the merged data set. The following columns are extracted:
+
+* SubjectId: The unique identifier of the subject
+* ActivityId: The activity being performed for this data record
+* OriginalDataset: The dataset of this data record (Test or Train)
+* RowIdInDataset: The row number within the original data set
+* Regular expression 'mean': This matches all data columns with a column name containing mean (Note meanFreq is removed in a secondary step)
+* Regular expression 'std': This matches all data columns with a column name containing std
+
+The extracted data is stored in a data frame variable 'extractedData'.
+
+#### Add activity labels
+
+The activity text labels are added as a new column to the data set via the join command (plyr library). 
+
+The modified data set is stored in a data frame variable 'labelledData'.
+
+#### Tidy up data labels
+
+The labels for the data set are modified to be more understandable. This is done by changing the names vector for the data frames. I perform the following modifications:
+
+* -X, -Y, -Z is changed to X Axis, Y Axis, Z Axis
+* -mean() is changed to Mean
+* -std() is changed to StdDev
+
+The modfied data set is stored in a data frame variable 'namedData'.
+
+#### Export tidy data set
+
+This stage involves the following steps:
+
+
 
 ### Data Information
 
