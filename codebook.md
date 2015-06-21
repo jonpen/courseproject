@@ -35,7 +35,22 @@ Note that if you would like to compare the exported file that results from the s
 
 This R script performs the following steps:
 
-1. It loads the following file
+1. It loads the following files from the raw-data:
+
+The following metadata:
+
+* features.txt: This lists the data field labels for the captured data records
+* activity_labels.txt: This specifies the activity associated with an activity identifier 
+
+From the test data set:
+
+* test/subjectTest.txt: Specifies which subject corresponds to the captured data record
+* test/y_test.txt: Specifies the subject's activity for the corresponding captured data record
+* test/X_test.txt: The processed accelerometer information from the smart phone
+
+The equivalent files are also loaded for the training data set (just replace test for train)
+
+2. 
 
 ### Data Information
 
