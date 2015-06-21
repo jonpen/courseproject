@@ -1,6 +1,11 @@
 # Codebook
 
-This file describes the structure of the cleaned data set provided by the run_analysis.R script within this project.
+This file contains the following information:
+
+- Information regarding the raw data used for this analysis
+- Description of how to run the script run_analysis.R script within this repository
+- An outline of the script algorithm
+- A description of the result data sets from script execution (cleaned data set within R and the export file)
 
 ## Running the Script
 
